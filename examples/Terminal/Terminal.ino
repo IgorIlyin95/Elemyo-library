@@ -1,7 +1,7 @@
 //  Terminal
 //  Reads an analog input on pin A0, prints the result to the Serial Monitor.
 //  Graphical representation is available using Matlab Terminal.
-//  2018-04-18 by ELEMIO (https://github.com/eadf)
+//  2018-04-18 by ELEMIO (https://github.com/ELEMIO/Arduino)
 //
 // Changelog:
 //     2018-04-18 - initial release
