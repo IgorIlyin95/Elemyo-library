@@ -1,9 +1,9 @@
-//  2018-04-18 by ELEMIO (https://github.com/ELEMIO)
+//  2018-04-18 by ELEMYO (https://github.com/ELEMYO/Arduino)
 
 
-#ifndef ELEMIO_h
+#ifndef ELEMYO_h
 
-	#define ELEMIO_h
+	#define ELEMYO_h
 	
 	#include "Arduino.h"          // include arduino Core
 
@@ -18,9 +18,9 @@
     #define x16    B110           // x16 gain
     #define x32    B111           // x32 gain
 
-	class ELEMIO {
+	class ELEMYO {
 		public:
-			ELEMIO(byte pin);         // initiate object
+			ELEMYO(byte pin);         // initiate object
 			void gain(byte value);     // change gain
         
 		private:
