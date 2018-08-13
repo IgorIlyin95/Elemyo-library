@@ -20,13 +20,11 @@
 
 	class ELEMYO {
 		public:
-			ELEMYO(byte CS, byte SI, byte CLK);         // initiate object
+			ELEMYO(byte CS);         // initiate object
 			void gain(byte value);     // change gain
         
 		private:
             byte _cs;                  // chip select pin
-	    byte _si;                  // slave input pin
-	    byte _clk;                  // clock pin
 	};
 	
 #endif
