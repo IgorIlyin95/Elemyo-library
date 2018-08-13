@@ -46,29 +46,32 @@ ELEMYO -->  UNO
 
 #include <ELEMYO.h>
 
-// These constants won't change. They're used to give names to the pins used:
-const int analogInPin = A0;    // Analog input pin that the potentiometer is attached to
+#define   CSpin         10
+#define   SDIpin        11
+#define   CLKpin        13
+#define   sensorInPin   A0     // Analog input pin that the sensor is attached to
+
 const int timePeriod = 1;      // Frequency of signal update (time in ms)
 
 int sensorValue = 0;           // value read from the sensor
 int gainValue = 1;             // gain value
 
-ELEMYO MyoSensor(10);
+ELEMYO MyoSensor(CSpin, SDIpin, CLKpin);
 
 
 void setup() {
   // initialize serial communications at 115200 bps:
   Serial.begin(115200);
   MyoSensor.gain(x1);
-  // init A0
-  pinMode(A0,INPUT_PULLUP);
+  // init sensorInPin
+  pinMode(sensorInPin, INPUT_PULLUP);
 }
 
 float t = millis();
 
 void loop() {
   // read the analog in value:
-  sensorValue = analogRead(analogInPin);
+  sensorValue = analogRead(sensorInPin);
 
   // print the results to the Serial Monitor:
   Serial.println(sensorValue);
