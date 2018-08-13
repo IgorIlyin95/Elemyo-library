@@ -47,8 +47,6 @@ ELEMYO -->  UNO
 #include <ELEMYO.h>
 
 #define   CSpin         10
-#define   SDIpin        11
-#define   CLKpin        13
 #define   sensorInPin   A0     // Analog input pin that the sensor is attached to
 
 const int timePeriod = 1;      // Frequency of signal update (time in ms)
@@ -56,7 +54,7 @@ const int timePeriod = 1;      // Frequency of signal update (time in ms)
 int sensorValue = 0;           // value read from the sensor
 int gainValue = 1;             // gain value
 
-ELEMYO MyoSensor(CSpin, SDIpin, CLKpin);
+ELEMYO MyoSensor(CSpin);
 
 
 void setup() {
