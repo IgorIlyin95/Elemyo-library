@@ -2,7 +2,7 @@
 //  Reads an analog input on pin A0, prints the result to the Serial Monitor.
 //  The sensor gain is controlled by the program.
 //  Graphical representation is available using Matlab Terminal.
-//  2018-04-18 by ELEMYO (https://github.com/ELEMYO/Arduino)
+//  2018-04-18 by ELEMYO (https://github.com/ELEMYO/Elemyo-library)
 //
 // Changelog:
 //     2018-04-18 - initial release
