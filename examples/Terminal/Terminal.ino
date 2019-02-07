@@ -62,7 +62,7 @@ void setup() {
   Serial.begin(115200);
   MyoSensor.gain(x1);
   // init sensorInPin
-  pinMode(sensorInPin, INPUT_PULLUP);
+  pinMode(sensorInPin, INPUT);
 }
 
 float t = millis();
