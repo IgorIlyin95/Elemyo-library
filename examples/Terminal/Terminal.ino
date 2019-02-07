@@ -60,6 +60,7 @@ ELEMYO MyoSensor(CSpin);
 void setup() {
   // initialize serial communications at 115200 bps:
   Serial.begin(115200);
+  // Initial value of gain
   MyoSensor.gain(x1);
   // init sensorInPin
   pinMode(sensorInPin, INPUT);
