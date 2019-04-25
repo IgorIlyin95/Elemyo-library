@@ -48,7 +48,7 @@ ELEMYO -->  Arduino
 
 #define   CSpin         10
 #define   sensorInPin   A0     // Analog input pin that the sensor is attached to
-#define   timePeriod    100;      // Frequency of signal update (time in us)
+#define   timePeriod    1      // Frequency of signal update (time in ms)
 
 int sensorValue = 0;           // value read from the sensor
 int gainValue = 1;             // gain value
@@ -109,5 +109,5 @@ void loop() {
   }
 
   // wait before the next loop
-  delaydelayMicroseconds(timePeriod);
+  delay(timePeriod);
 }
