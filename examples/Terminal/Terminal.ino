@@ -31,15 +31,15 @@ THE SOFTWARE.
 ===============================================
 
 
-Wiring the ELEMYO sensor to an Arduino UNO
+Wiring the ELEMYO sensor to an Arduino
 
-ELEMYO -->  UNO
+ELEMYO -->  Arduino
   +        5V
   -        GND
   S        analog pin A0 (or other analog input)
   СS       diginal pin 10  (SS pin)
-  SDI      diginal pin 11  (MOSI pin)
-  CLK      diginal pin 13  (SCK pin)
+  MOSI     pin 11 (UNO, Nano, Mini), pin 51 (Mega), pin SI (Leonardo), pin 16 (Pro micro)
+  SCK      pin 13 (UNO, Nano, Mini), pin 52 (Mega), pin SCK (Leonardo), pin 15 (Pro micro)
 
 
 */
@@ -48,8 +48,7 @@ ELEMYO -->  UNO
 
 #define   CSpin         10
 #define   sensorInPin   A0     // Analog input pin that the sensor is attached to
-
-const int timePeriod = 1;      // Frequency of signal update (time in ms)
+#define   timePeriod    100;      // Frequency of signal update (time in us)
 
 int sensorValue = 0;           // value read from the sensor
 int gainValue = 1;             // gain value
@@ -110,5 +109,5 @@ void loop() {
   }
 
   // wait before the next loop
-  delay(timePeriod);
+  delaydelayMicroseconds(timePeriod);
 }
