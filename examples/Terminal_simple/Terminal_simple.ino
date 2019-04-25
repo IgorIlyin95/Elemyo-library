@@ -5,7 +5,7 @@
 //  2018-04-18 by ELEMYO (https://github.com/ELEMYO/Elemyo-library)
 //
 // Changelog:
-//     2018-04-18 - initial release
+//     2019-04-18 - initial release
 
 /* ============================================
 ELEMYO library code is placed under the MIT license
@@ -37,31 +37,24 @@ ELEMYO -->  Arduino
   +        5V
   -        GND
   S        analog pin A0 (or other analog input)
-  СS       diginal pin 10  (SS pin)
-  MOSI     pin 11 (UNO, Nano, Mini), pin 51 (Mega), pin SI (Leonardo), pin 16 (Pro micro)
-  SCK      pin 13 (UNO, Nano, Mini), pin 52 (Mega), pin SCK (Leonardo), pin 15 (Pro micro)
 
 */
 
 #include <ELEMYO.h>
 
-#define   CSpin         10
 #define   sensorInPin   A0     // Analog input pin that the sensor is attached to
-#define   timePeriod    1      // Frequency of signal update (time in ms)
+#define   timePeriod    10      // Frequency of signal update (time in ms)
 
 int sensorValue = 0;           // value read from the sensor
-int gainValue = 1;             // gain value
-
-ELEMYO MyoSensor(CSpin);
 
 void setup() {
   // initialize serial communications at 115200 bps:
   Serial.begin(115200);
-  // Initial value of gain
-  MyoSensor.gain(x1);
   // init sensorInPin
   pinMode(sensorInPin, INPUT);
 }
+
+float t = millis();
 
 void loop() {
   // read the analog in value:
@@ -69,40 +62,6 @@ void loop() {
 
   // print the results to the Serial Monitor:
   Serial.println(sensorValue);
-
-  // check for byte in buffer
-  if (Serial.available() > 0) {
-    // Read gain value from serial buffer
-    gainValue = Serial.read(); 
-    
-    // Set the gain in the sensor
-    switch(gainValue) { 
-      case 1:
-        MyoSensor.gain(x1);
-        break;
-      case 2:
-        MyoSensor.gain(x2);
-        break;
-      case 4:
-        MyoSensor.gain(x4);
-        break;
-      case 5:
-        MyoSensor.gain(x5);
-        break;
-      case 8:
-        MyoSensor.gain(x8);
-        break;
-      case 10:
-        MyoSensor.gain(x10);
-        break;
-      case 16:
-        MyoSensor.gain(x16);
-        break;
-      case 32:
-        MyoSensor.gain(x32);
-        break;
-    }
-  }
 
   // wait before the next loop
   delay(timePeriod);
